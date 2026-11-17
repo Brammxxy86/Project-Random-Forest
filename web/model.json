@@ -1,0 +1,196 @@
+{
+  "case": "Prediksi Kelayakan Penerima Beasiswa",
+  "features": {
+    "IPK": [
+      "Rendah",
+      "Sedang",
+      "Tinggi"
+    ],
+    "Penghasilan Ortu": [
+      "Rendah",
+      "Sedang",
+      "Tinggi"
+    ],
+    "Prestasi": [
+      "Ada",
+      "Tidak Ada"
+    ],
+    "Kehadiran": [
+      "Cukup",
+      "Baik"
+    ]
+  },
+  "classes": [
+    "Layak",
+    "Tidak Layak"
+  ],
+  "feature_names": [
+    "IPK_Rendah",
+    "IPK_Sedang",
+    "IPK_Tinggi",
+    "Penghasilan Ortu_Rendah",
+    "Penghasilan Ortu_Sedang",
+    "Penghasilan Ortu_Tinggi",
+    "Prestasi_Ada",
+    "Prestasi_Tidak Ada",
+    "Kehadiran_Baik",
+    "Kehadiran_Cukup"
+  ],
+  "trees": [
+    {
+      "leaf": false,
+      "feature": "IPK_Sedang",
+      "threshold": 0.5,
+      "left": {
+        "leaf": false,
+        "feature": "IPK_Tinggi",
+        "threshold": 0.5,
+        "left": {
+          "leaf": true,
+          "prediction": "Tidak Layak",
+          "counts": {
+            "Layak": 0.0,
+            "Tidak Layak": 1.0
+          }
+        },
+        "right": {
+          "leaf": true,
+          "prediction": "Layak",
+          "counts": {
+            "Layak": 1.0,
+            "Tidak Layak": 0.0
+          }
+        }
+      },
+      "right": {
+        "leaf": true,
+        "prediction": "Tidak Layak",
+        "counts": {
+          "Layak": 0.0,
+          "Tidak Layak": 1.0
+        }
+      }
+    },
+    {
+      "leaf": false,
+      "feature": "Penghasilan Ortu_Tinggi",
+      "threshold": 0.5,
+      "left": {
+        "leaf": false,
+        "feature": "Kehadiran_Baik",
+        "threshold": 0.5,
+        "left": {
+          "leaf": false,
+          "feature": "IPK_Rendah",
+          "threshold": 0.5,
+          "left": {
+            "leaf": true,
+            "prediction": "Layak",
+            "counts": {
+              "Layak": 1.0,
+              "Tidak Layak": 0.0
+            }
+          },
+          "right": {
+            "leaf": true,
+            "prediction": "Tidak Layak",
+            "counts": {
+              "Layak": 0.0,
+              "Tidak Layak": 1.0
+            }
+          }
+        },
+        "right": {
+          "leaf": false,
+          "feature": "IPK_Rendah",
+          "threshold": 0.5,
+          "left": {
+            "leaf": true,
+            "prediction": "Layak",
+            "counts": {
+              "Layak": 1.0,
+              "Tidak Layak": 0.0
+            }
+          },
+          "right": {
+            "leaf": true,
+            "prediction": "Tidak Layak",
+            "counts": {
+              "Layak": 0.0,
+              "Tidak Layak": 1.0
+            }
+          }
+        }
+      },
+      "right": {
+        "leaf": false,
+        "feature": "Prestasi_Tidak Ada",
+        "threshold": 0.5,
+        "left": {
+          "leaf": true,
+          "prediction": "Layak",
+          "counts": {
+            "Layak": 1.0,
+            "Tidak Layak": 0.0
+          }
+        },
+        "right": {
+          "leaf": true,
+          "prediction": "Tidak Layak",
+          "counts": {
+            "Layak": 0.0,
+            "Tidak Layak": 1.0
+          }
+        }
+      }
+    },
+    {
+      "leaf": false,
+      "feature": "IPK_Tinggi",
+      "threshold": 0.5,
+      "left": {
+        "leaf": false,
+        "feature": "Penghasilan Ortu_Tinggi",
+        "threshold": 0.5,
+        "left": {
+          "leaf": false,
+          "feature": "Kehadiran_Cukup",
+          "threshold": 0.5,
+          "left": {
+            "leaf": true,
+            "prediction": "Layak",
+            "counts": {
+              "Layak": 0.8,
+              "Tidak Layak": 0.2
+            }
+          },
+          "right": {
+            "leaf": true,
+            "prediction": "Tidak Layak",
+            "counts": {
+              "Layak": 0.0,
+              "Tidak Layak": 1.0
+            }
+          }
+        },
+        "right": {
+          "leaf": true,
+          "prediction": "Tidak Layak",
+          "counts": {
+            "Layak": 0.0,
+            "Tidak Layak": 1.0
+          }
+        }
+      },
+      "right": {
+        "leaf": true,
+        "prediction": "Layak",
+        "counts": {
+          "Layak": 1.0,
+          "Tidak Layak": 0.0
+        }
+      }
+    }
+  ],
+  "method": "Random Forest: 3 decision trees, bootstrap sampling, Gini, max_depth=3, max_features=2, random_state=42"
+}

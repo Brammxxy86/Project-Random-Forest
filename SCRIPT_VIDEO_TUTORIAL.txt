@@ -1,0 +1,26 @@
+SCRIPT VIDEO TUTORIAL
+Project Random Forest – Prediksi Kelayakan Penerima Beasiswa
+Bayu Muhammad Ramadhan | 301240008 | Kelas 5A
+
+Assalamualaikum warahmatullahi wabarakatuh.
+
+Perkenalkan, saya Bayu Muhammad Ramadhan, NIM 301240008, kelas 5A. Pada video ini saya akan menjelaskan project implementasi algoritma Random Forest dengan studi kasus prediksi kelayakan penerima beasiswa.
+
+Pertama, ini adalah struktur folder project. Folder data berisi dataset_beasiswa.csv yang memiliki 14 data simulasi. Setiap data memiliki empat atribut, yaitu IPK, penghasilan orang tua, prestasi, dan kehadiran. Target klasifikasinya adalah Layak dan Tidak Layak.
+
+Selanjutnya, file train_model.py digunakan untuk melatih model Random Forest. Pada project ini saya menggunakan tiga decision tree, bootstrap sampling, kriteria Gini, kedalaman maksimum tiga, dan maksimal dua fitur yang dipertimbangkan pada setiap pemisahan. Random state dibuat 42 agar proses pelatihan dapat diulang dengan hasil yang konsisten pada lingkungan yang sama.
+
+File model_random_forest.json dan web/model.json menyimpan struktur pohon hasil pelatihan dalam format JSON. Struktur ini kemudian digunakan oleh halaman web untuk melakukan simulasi prediksi.
+
+Berikutnya, pada folder web terdapat file index.html. File ini merupakan tampilan utama simulasi. Pengguna dapat memilih kategori IPK, penghasilan orang tua, prestasi, dan kehadiran. Setelah tombol Jalankan Simulasi ditekan, program menelusuri masing-masing dari tiga pohon keputusan.
+
+Setiap pohon menghasilkan satu prediksi. Hasil dari ketiga pohon kemudian dihitung menggunakan majority voting, yaitu kelas yang mendapatkan suara terbanyak menjadi hasil akhir Random Forest. Halaman web juga menampilkan jalur keputusan setiap pohon agar proses prediksi dapat diamati.
+
+Untuk menjalankan web secara lokal, buka terminal pada folder utama project, kemudian jalankan perintah python -m http.server 8000. Setelah itu buka browser dan akses localhost:8000/web/. Web harus dijalankan melalui server lokal agar file model.json dapat dibaca oleh browser.
+
+Sebagai contoh, ketika input yang dipilih adalah IPK Sedang, penghasilan orang tua Sedang, prestasi Tidak Ada, dan kehadiran Baik, hasil dari ketiga pohon adalah Tidak Layak, Layak, dan Layak. Karena Layak memperoleh dua suara, hasil akhir prediksi adalah Layak.
+
+Project ini menggunakan data simulasi untuk keperluan pembelajaran, sehingga hasilnya tidak digunakan sebagai keputusan beasiswa yang sebenarnya. Akurasi pada laporan merupakan akurasi data latih dan bukan hasil pengujian pada data baru.
+
+Demikian penjelasan project Random Forest ini. Terima kasih.
+Wassalamualaikum warahmatullahi wabarakatuh.

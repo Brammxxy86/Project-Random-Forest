@@ -1,0 +1,15 @@
+IPK,Penghasilan Ortu,Prestasi,Kehadiran,Kelayakan
+Tinggi,Rendah,Ada,Baik,Layak
+Tinggi,Rendah,Tidak Ada,Baik,Layak
+Tinggi,Sedang,Ada,Baik,Layak
+Tinggi,Tinggi,Ada,Baik,Layak
+Sedang,Rendah,Ada,Baik,Layak
+Sedang,Sedang,Ada,Baik,Layak
+Sedang,Rendah,Tidak Ada,Baik,Layak
+Tinggi,Sedang,Tidak Ada,Cukup,Layak
+Sedang,Tinggi,Tidak Ada,Baik,Tidak Layak
+Rendah,Rendah,Ada,Baik,Tidak Layak
+Rendah,Sedang,Ada,Cukup,Tidak Layak
+Rendah,Tinggi,Tidak Ada,Baik,Tidak Layak
+Sedang,Tinggi,Ada,Cukup,Tidak Layak
+Tinggi,Tinggi,Tidak Ada,Cukup,Tidak Layak
